@@ -1,30 +1,179 @@
-Files
-Go to file
-t
-T
-.gitignore
-README.md
-index.html
-RJ-App
-/
-index.html
-in
-main
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RJ App 👑</title>
 
-Edit
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial,sans-serif;
+  background:#070312;
+  color:white;
+}
+header{
+  background:linear-gradient(135deg,#12061F,#8B5CF6);
+  padding:25px 20px;
+  text-align:center;
+}
+header h1{font-size:32px}
+header p{margin-top:8px;color:#eee}
+nav{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  padding:15px;
+  background:#12061F;
+}
+nav button{
+  background:#8B5CF6;
+  color:white;
+  border:0;
+  padding:10px 15px;
+  border-radius:20px;
+  cursor:pointer;
+}
+main{max-width:1100px;margin:auto;padding:25px 15px}
+.hero{
+  background:linear-gradient(135deg,#1b0b2e,#30145c);
+  padding:30px;
+  border-radius:20px;
+  margin-bottom:25px;
+}
+.hero h2{font-size:28px;margin-bottom:10px}
+.hero p{color:#cfc9dc;line-height:1.6}
+.section-title{
+  margin:25px 0 15px;
+  font-size:24px;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+.card{
+  background:#12061F;
+  border:1px solid #34204d;
+  border-radius:16px;
+  padding:20px;
+  transition:.2s;
+}
+.card:hover{
+  transform:translateY(-4px);
+  border-color:#8B5CF6;
+}
+.cover{
+  height:180px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#8B5CF6,#A855F7,#070312);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:45px;
+  margin-bottom:15px;
+}
+.card h3{margin-bottom:8px}
+.card p{color:#b8b5c5;font-size:14px;line-height:1.5}
+.btn{
+  margin-top:15px;
+  background:#8B5CF6;
+  border:0;
+  color:white;
+  padding:10px 16px;
+  border-radius:10px;
+  cursor:pointer;
+}
+footer{
+  text-align:center;
+  padding:30px 15px;
+  margin-top:30px;
+  background:#12061F;
+  color:#b8b5c5;
+}
+</style>
+</head>
 
-Preview
-Indent mode
+<body>
 
-Spaces
-Indent size
+<header>
+  <h1>👑 RJ APP</h1>
+  <p>Stories • Novels • Dreams</p>
+</header>
 
-2
-Line wrap mode
+<nav>
+  <button>🏠 Home</button>
+  <button>📖 Stories</button>
+  <button>✍️ My Stories</button>
+  <button>👤 Profile</button>
+  <button>🔖 Bookmarks</button>
+</nav>
 
-No wrap
-Editing index.html file contents
- 
-  1
+<main>
 
-Use Control + Shift + m to toggle the tab key moving focus. Alternatively, use esc then tab to move to the next interactive element on the page.
+<section class="hero">
+  <h2>Welcome to RJ App 👑</h2>
+  <p>Read amazing stories, discover new novels and build your own world of stories.</p>
+  <button class="btn">📖 Explore Stories</button>
+</section>
+
+<h2 class="section-title">🔥 Featured Stories</h2>
+
+<div class="cards">
+
+  <div class="card">
+    <div class="cover">👑</div>
+    <h3>The Mafia King's Lost Queen</h3>
+    <p>A powerful mafia king, a mysterious queen and a dangerous secret.</p>
+    <button class="btn">Read Now</button>
+  </div>
+
+  <div class="card">
+    <div class="cover">❤️</div>
+    <h3>The Day I Fell for You</h3>
+    <p>A beautiful love story filled with emotions, secrets and heartbreak.</p>
+    <button class="btn">Read Now</button>
+  </div>
+
+  <div class="card">
+    <div class="cover">🥀</div>
+    <h3>The Broken Heart</h3>
+    <p>Sometimes the person we love becomes the reason our heart breaks.</p>
+    <button class="btn">Read Now</button>
+  </div>
+
+</div>
+
+<h2 class="section-title">✨ RJ App Features</h2>
+
+<div class="cards">
+
+  <div class="card">
+    <h3>📖 Stories & Novels</h3>
+    <p>Discover and read different stories and novels.</p>
+  </div>
+
+  <div class="card">
+    <h3>❤️ Likes & Comments</h3>
+    <p>Like stories and share your thoughts with other readers.</p>
+  </div>
+
+  <div class="card">
+    <h3>🔖 Bookmarks</h3>
+    <p>Save your favourite stories for later.</p>
+  </div>
+
+  <div class="card">
+    <h3>💰 Earning System</h3>
+    <p>Authors will be able to earn from their stories.</p>
+  </div>
+
+</div>
+
+</main>
+
+<footer>
+  <p>© 2026 RJ App 👑</p>
+  <p>Welcome to Raja King World</p>
+</footer>

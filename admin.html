@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel • RJ App 👑</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#070312;
+  color:white;
+}
+
+header{
+  background:linear-gradient(135deg,#12061F,#8B5CF6);
+  padding:30px 20px;
+  text-align:center;
+}
+
+header h1{font-size:32px}
+
+header p{
+  margin-top:8px;
+  color:#eee;
+}
+
+main{
+  max-width:1000px;
+  margin:auto;
+  padding:25px 15px;
+}
+
+.back{
+  display:inline-block;
+  background:#8B5CF6;
+  color:white;
+  text-decoration:none;
+  padding:11px 17px;
+  border-radius:10px;
+  margin-bottom:25px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:15px;
+}
+
+.card{
+  background:#12061F;
+  border:1px solid #34204d;
+  border-radius:18px;
+  padding:22px;
+}
+
+.icon{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.card h3{
+  margin-bottom:7px;
+}
+
+.number{
+  font-size:25px;
+  font-weight:bold;
+}
+
+.note{
+  color:#b8b5c5;
+  line-height:1.5;
+  margin-top:8px;
+}
+
+.panel{
+  margin-top:22px;
+  background:#12061F;
+  border:1px solid #34204d;
+  border-radius:18px;
+  padding:25px;
+}
+
+.panel h2{
+  margin-bottom:12px;
+}
+
+.action{
+  display:inline-block;
+  margin-top:15px;
+  margin-right:8px;
+  background:#8B5CF6;
+  color:white;
+  text-decoration:none;
+  padding:10px 15px;
+  border-radius:10px;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  margin-top:30px;
+  background:#12061F;
+  color:#b8b5c5;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🛠️ RJ APP — Admin Panel</h1>
+  <p>Manage the RJ App 👑</p>
+</header>
+
+<main>
+
+<a class="back" href="index.html">🏠 Back to Home</a>
+
+<div class="cards">
+
+  <div class="card">
+    <div class="icon">👥</div>
+    <h3>Users</h3>
+    <div class="number">0</div>
+    <p class="note">Registered users</p>
+  </div>
+
+  <div class="card">
+    <div class="icon">📚</div>
+    <h3>Stories</h3>
+    <div class="number">0</div>
+    <p class="note">Uploaded stories</p>
+  </div>
+
+  <div class="card">
+    <div class="icon">💬</div>
+    <h3>Comments</h3>
+    <div class="number">0</div>
+    <p class="note">Reader comments</p>
+  </div>
+
+  <div class="card">
+    <div class="icon">💰</div>
+    <h3>Earnings</h3>
+    <div class="number">$0</div>
+    <p class="note">Author earnings</p>
+  </div>
+
+</div>
+
+<div class="panel">
+
+  <h2>👑 Administration</h2>
+
+  <p class="note">
+    Admin tools will allow the owner to manage
+    users, stories, comments, reports and earnings.
+  </p>
+
+  <a class="action" href="stories.html">
+    📚 Manage Stories
+  </a>
+
+  <a class="action" href="profile.html">
+    👥 Manage Users
+  </a>
+
+</div>
+
+<div class="panel">
+
+  <h2>⚠️ Important</h2>
+
+  <p class="note">
+    This page is currently a front-end demo.
+    Real admin security and database controls
+    will be added when the RJ App backend is connected.
+  </p>
+
+</div>
+
+</main>
+
+<footer>
+  © 2026 RJ App 👑
+</footer>
+
+</body>
+</html>

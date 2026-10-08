@@ -10,18 +10,17 @@
   box-sizing:border-box;
   margin:0;
   padding:0;
-  font-family:Arial,sans-serif;
 }
 
 body{
+  font-family:Arial,sans-serif;
   background:#070312;
   color:white;
-  line-height:1.6;
 }
 
 header{
   background:linear-gradient(135deg,#12061F,#8B5CF6);
-  padding:35px 20px;
+  padding:28px 20px;
   text-align:center;
 }
 
@@ -29,146 +28,161 @@ header h1{
   font-size:30px;
 }
 
+header p{
+  margin-top:8px;
+  color:#eee;
+}
+
+nav{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  padding:15px;
+  background:#12061F;
+}
+
+nav a{
+  background:#8B5CF6;
+  color:white;
+  text-decoration:none;
+  padding:10px 15px;
+  border-radius:20px;
+  font-weight:bold;
+}
+
 main{
-  max-width:800px;
+  max-width:900px;
   margin:auto;
   padding:25px 15px;
 }
 
-.back{
-  display:inline-block;
-  background:#8B5CF6;
-  color:white;
-  text-decoration:none;
-  padding:10px 16px;
-  border-radius:10px;
-  margin-bottom:20px;
-}
-
-.book{
-  background:#12061F;
-  border:1px solid #34204d;
-  border-radius:20px;
-  padding:25px;
-}
-
 .cover{
-  background:linear-gradient(135deg,#070312,#8B5CF6);
-  border-radius:15px;
-  min-height:180px;
+  height:300px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#080008,#8B0000,#30145c,#070312);
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
   padding:20px;
-  margin-bottom:20px;
+  margin-bottom:25px;
 }
 
 .cover h2{
-  font-size:28px;
+  font-size:38px;
+  text-shadow:0 3px 12px #000;
+}
+
+.panel{
+  background:#12061F;
+  border:1px solid #34204d;
+  border-radius:18px;
+  padding:25px;
+  margin-bottom:20px;
+}
+
+.panel h2{
+  margin-bottom:12px;
+}
+
+.panel p{
+  color:#c7c2d0;
+  line-height:1.7;
 }
 
 .author{
-  color:#B8B5C5;
-  margin-bottom:20px;
+  color:#A855F7 !important;
+  font-weight:bold;
 }
 
 .stats{
   display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+
+.stat{
+  background:#211034;
+  padding:8px 12px;
+  border-radius:10px;
+  color:#ddd;
+  font-size:14px;
+}
+
+.actions{
+  display:flex;
   gap:10px;
   flex-wrap:wrap;
-  margin:20px 0;
-}
-
-.action{
-  border:none;
-  background:#211034;
-  color:white;
-  padding:11px 15px;
-  border-radius:10px;
-  cursor:pointer;
-  font-size:15px;
-}
-
-.action:hover{
-  background:#8B5CF6;
-}
-
-.action.liked{
-  background:#8B5CF6;
-}
-
-.chapter{
-  background:#211034;
-  padding:20px;
-  border-radius:15px;
   margin-top:20px;
 }
 
-.chapter h3{
-  margin-bottom:12px;
-  color:#A855F7;
-}
-
-.comments{
-  margin-top:25px;
-}
-
-.comments h3{
-  margin-bottom:15px;
-}
-
-.comment-form{
-  display:flex;
-  gap:10px;
-  margin-bottom:20px;
-}
-
-.comment-form input{
-  flex:1;
-  min-width:0;
-  padding:12px;
-  border-radius:10px;
-  border:1px solid #8B5CF6;
-  background:#070312;
-  color:white;
-}
-
-.comment-form button{
-  border:none;
+.btn{
   background:#8B5CF6;
   color:white;
-  padding:12px 16px;
+  border:0;
+  padding:11px 17px;
   border-radius:10px;
   cursor:pointer;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.btn:hover{
+  background:#A855F7;
+}
+
+.bookmarked{
+  background:#A855F7;
+}
+
+textarea{
+  width:100%;
+  min-height:100px;
+  resize:vertical;
+  background:#070312;
+  color:white;
+  border:1px solid #34204d;
+  border-radius:12px;
+  padding:12px;
+  font-size:15px;
+  margin-top:10px;
 }
 
 .comment{
   background:#211034;
-  padding:12px;
-  border-radius:10px;
-  margin-top:10px;
+  border-radius:12px;
+  padding:14px;
+  margin-top:12px;
 }
 
-.comment strong{
-  color:#A855F7;
+.comment small{
+  color:#999;
+  display:block;
+  margin-bottom:6px;
 }
 
 .empty{
-  color:#B8B5C5;
+  color:#999;
+  margin-top:12px;
 }
 
 footer{
   text-align:center;
-  padding:30px;
-  margin-top:30px;
+  padding:30px 15px;
   background:#12061F;
-  color:#B8B5C5;
+  color:#b8b5c5;
+  margin-top:30px;
 }
 
 @media(max-width:600px){
-  .comment-form{
-    flex-direction:column;
+  .cover{
+    height:240px;
+  }
+
+  .cover h2{
+    font-size:28px;
   }
 }
 </style>
@@ -177,237 +191,365 @@ footer{
 <body>
 
 <header>
-  <h1>👑 RJ APP — Story</h1>
+  <h1>👑 RJ APP</h1>
+  <p>Raja King World</p>
 </header>
+
+<nav>
+  <a href="index.html">🏠 Home</a>
+  <a href="stories.html">📖 Stories</a>
+  <a href="bookmarks.html">🔖 Bookmarks</a>
+  <a href="profile.html">👤 Profile</a>
+</nav>
 
 <main>
 
-<a class="back" href="stories.html">
-  ← Back to Stories
-</a>
-
-<div class="book">
-
   <div class="cover">
+    <h2>The Mafia King's<br>Lost Queen 👑</h2>
+  </div>
+
+  <div class="panel">
+
     <h2>The Mafia King's Lost Queen 👑</h2>
-  </div>
 
-  <h2>The Mafia King's Lost Queen 👑</h2>
-
-  <p class="author">
-    ✍️ By Raja King
-  </p>
-
-  <div class="stats">
-
-    <button class="action" id="likeBtn">
-      ❤️ Like <span id="likeCount">0</span>
-    </button>
-
-    <button class="action">
-      👁️ Views <span id="viewCount">0</span>
-    </button>
-
-  </div>
-
-  <div class="chapter">
-
-    <h3>Chapter 1 — The Lost Queen</h3>
-
-    <p>
-      The night was dark and silent when the mysterious
-      mafia king returned to his mansion.
+    <p class="author">
+      ✍️ Written by Raja King
     </p>
 
-    <br>
+    <div class="stats">
+      <span class="stat">👁️ <span id="views">0</span> Views</span>
+      <span class="stat">❤️ <span id="likes">0</span> Likes</span>
+      <span class="stat">💬 <span id="commentCount">0</span> Comments</span>
+    </div>
 
-    <p>
-      Everyone feared his name, but nobody knew the secret
-      hidden inside his heart.
-    </p>
+    <div class="actions">
 
-    <br>
+      <button class="btn" id="likeBtn">
+        ❤️ Like
+      </button>
 
-    <p>
-      Then she appeared again—the woman he had spent years
-      trying to forget.
-    </p>
-
-    <br>
-
-    <p>
-      She was his lost queen.
-    </p>
-
-  </div>
-
-  <div class="comments">
-
-    <h3>💬 Comments</h3>
-
-    <div class="comment-form">
-
-      <input
-        type="text"
-        id="commentInput"
-        placeholder="Write a comment..."
-      >
-
-      <button id="commentBtn">
-        Comment
+      <button class="btn" id="bookmarkBtn">
+        🔖 Bookmark
       </button>
 
     </div>
 
-    <div id="commentsList">
-      <p class="empty">No comments yet. Be the first! ❤️</p>
-    </div>
+  </div>
+
+
+  <div class="panel">
+
+    <h2>📖 About This Story</h2>
+
+    <p>
+      A powerful mafia king, a mysterious queen,
+      and a dangerous secret that could destroy
+      everything they have built.
+    </p>
+
+    <p style="margin-top:15px;">
+      When their paths cross, love becomes more
+      dangerous than the mafia itself.
+    </p>
 
   </div>
 
-</div>
+
+  <div class="panel">
+
+    <h2>📚 Chapter 1</h2>
+
+    <p>
+      The night was dark and silent.
+
+      The city lights reflected across the windows
+      of the enormous mansion.
+
+      Everyone knew his name.
+
+      Everyone feared him.
+
+      Alexander Black was the most powerful
+      mafia king in the city.
+
+      But tonight, something was different.
+
+      A mysterious girl had entered his world.
+
+      And he had no idea that she would become
+      the one person capable of changing his life
+      forever.
+    </p>
+
+  </div>
+
+
+  <div class="panel">
+
+    <h2>💬 Comments</h2>
+
+    <textarea id="commentInput"
+      placeholder="Write your comment..."></textarea>
+
+    <button class="btn" id="commentBtn">
+      💬 Post Comment
+    </button>
+
+    <div id="comments"></div>
+
+  </div>
 
 </main>
 
 <footer>
-  © 2026 RJ App 👑
+  <p>© 2026 RJ App 👑</p>
+  <p>Welcome to Raja King World</p>
 </footer>
+
 
 <script>
 
-const bookKey = "mafiaQueen";
+const storyId = "mafia-queen";
 
-let likes =
-  Number(localStorage.getItem(bookKey + "_likes") || 0);
+let views = Number(localStorage.getItem("rjViews_" + storyId)) || 0;
 
-let liked =
-  localStorage.getItem(bookKey + "_liked") === "true";
+let likes = Number(localStorage.getItem("rjLikes_" + storyId)) || 0;
 
-let views =
-  Number(localStorage.getItem(bookKey + "_views") || 0);
+let liked = localStorage.getItem("rjLiked_" + storyId) === "true";
 
-let comments =
-  JSON.parse(
-    localStorage.getItem(bookKey + "_comments") || "[]"
-  );
+let comments = [];
+
+try{
+  comments =
+    JSON.parse(localStorage.getItem("rjComments_" + storyId)) || [];
+}catch(error){
+  comments = [];
+}
+
+let bookmarks = [];
+
+try{
+  bookmarks =
+    JSON.parse(localStorage.getItem("rjBookmarks")) || [];
+}catch(error){
+  bookmarks = [];
+}
+
 
 views++;
 
-localStorage.setItem(
-  bookKey + "_views",
-  views
-);
+localStorage.setItem("rjViews_" + storyId, views);
 
-document.getElementById("likeCount").textContent = likes;
 
-document.getElementById("viewCount").textContent = views;
+document.getElementById("views").textContent = views;
 
-const likeBtn =
-  document.getElementById("likeBtn");
+document.getElementById("likes").textContent = likes;
+
+document.getElementById("commentCount").textContent = comments.length;
+
+
+const likeBtn = document.getElementById("likeBtn");
 
 if(liked){
-  likeBtn.classList.add("liked");
+  likeBtn.textContent = "💔 Unlike";
+  likeBtn.classList.add("bookmarked");
 }
 
-likeBtn.addEventListener("click",function(){
+
+likeBtn.addEventListener("click", function(){
 
   if(liked){
 
     likes--;
-
     liked = false;
 
-    likeBtn.classList.remove("liked");
+    likeBtn.textContent = "❤️ Like";
+    likeBtn.classList.remove("bookmarked");
 
   }else{
 
     likes++;
-
     liked = true;
 
-    likeBtn.classList.add("liked");
+    likeBtn.textContent = "💔 Unlike";
+    likeBtn.classList.add("bookmarked");
 
   }
 
-  localStorage.setItem(
-    bookKey + "_likes",
-    likes
-  );
+  localStorage.setItem("rjLikes_" + storyId, likes);
 
-  localStorage.setItem(
-    bookKey + "_liked",
-    liked
-  );
+  localStorage.setItem("rjLiked_" + storyId, liked);
 
-  document.getElementById("likeCount").textContent =
-    likes;
+  document.getElementById("likes").textContent = likes;
 
 });
 
-function showComments(){
 
-  const list =
-    document.getElementById("commentsList");
+const bookmarkBtn =
+  document.getElementById("bookmarkBtn");
 
-  if(comments.length === 0){
 
-    list.innerHTML =
-      '<p class="empty">No comments yet. Be the first! ❤️</p>';
+function isBookmarked(){
 
-    return;
-  }
+  return bookmarks.some(function(book){
 
-  list.innerHTML = "";
-
-  comments.forEach(function(comment){
-
-    const div =
-      document.createElement("div");
-
-    div.className = "comment";
-
-    div.innerHTML =
-      "<strong>Reader 👤</strong><br>" +
-      comment;
-
-    list.appendChild(div);
+    return book.id === storyId;
 
   });
 
 }
 
-document
-.getElementById("commentBtn")
-.addEventListener("click",function(){
 
-  const input =
-    document.getElementById("commentInput");
+function updateBookmarkButton(){
 
-  const text =
-    input.value.trim();
+  if(isBookmarked()){
 
-  if(text === ""){
+    bookmarkBtn.textContent = "✅ Bookmarked";
 
-    alert("Pehle comment likho ❤️");
+    bookmarkBtn.classList.add("bookmarked");
+
+  }else{
+
+    bookmarkBtn.textContent = "🔖 Bookmark";
+
+    bookmarkBtn.classList.remove("bookmarked");
+
+  }
+
+}
+
+
+updateBookmarkButton();
+
+
+bookmarkBtn.addEventListener("click", function(){
+
+  bookmarks = JSON.parse(
+    localStorage.getItem("rjBookmarks")
+  ) || [];
+
+  if(isBookmarked()){
+
+    bookmarks = bookmarks.filter(function(book){
+
+      return book.id !== storyId;
+
+    });
+
+  }else{
+
+    bookmarks.push({
+
+      id: storyId,
+
+      title: "The Mafia King's Lost Queen 👑",
+
+      description:
+        "A powerful mafia king, a mysterious queen and a dangerous secret.",
+
+      icon: "👑",
+
+      link: "mafia-queen.html",
+
+      views: views,
+
+      likes: likes
+
+    });
+
+  }
+
+  localStorage.setItem(
+    "rjBookmarks",
+    JSON.stringify(bookmarks)
+  );
+
+  updateBookmarkButton();
+
+});
+
+
+function renderComments(){
+
+  const box = document.getElementById("comments");
+
+  box.innerHTML = "";
+
+  if(comments.length === 0){
+
+    box.innerHTML =
+      '<p class="empty">No comments yet. Be the first! ❤️</p>';
 
     return;
 
   }
 
-  comments.push(text);
+  comments.forEach(function(comment){
+
+    const div = document.createElement("div");
+
+    div.className = "comment";
+
+    const small = document.createElement("small");
+
+    small.textContent = "👤 Reader";
+
+    const text = document.createElement("p");
+
+    text.textContent = comment.text;
+
+    div.appendChild(small);
+
+    div.appendChild(text);
+
+    box.appendChild(div);
+
+  });
+
+}
+
+
+renderComments();
+
+
+document.getElementById("commentBtn")
+.addEventListener("click", function(){
+
+  const input =
+    document.getElementById("commentInput");
+
+  const text = input.value.trim();
+
+  if(text === ""){
+
+    alert("Please write a comment first.");
+
+    return;
+
+  }
+
+  comments.push({
+
+    text: text,
+
+    time: new Date().toISOString()
+
+  });
 
   localStorage.setItem(
-    bookKey + "_comments",
+    "rjComments_" + storyId,
     JSON.stringify(comments)
   );
 
   input.value = "";
 
-  showComments();
+  document.getElementById("commentCount")
+    .textContent = comments.length;
+
+  renderComments();
 
 });
 
-showComments();
 
 </script>
 

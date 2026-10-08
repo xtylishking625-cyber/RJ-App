@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upload Story • RJ App 👑</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#070312;
+  color:white;
+}
+
+header{
+  background:linear-gradient(135deg,#12061F,#8B5CF6);
+  padding:30px 20px;
+  text-align:center;
+}
+
+header h1{font-size:32px}
+
+header p{
+  margin-top:8px;
+  color:#eee;
+}
+
+main{
+  max-width:700px;
+  margin:auto;
+  padding:25px 15px;
+}
+
+.back{
+  display:inline-block;
+  background:#8B5CF6;
+  color:white;
+  text-decoration:none;
+  padding:11px 17px;
+  border-radius:10px;
+  margin-bottom:25px;
+}
+
+.panel{
+  background:#12061F;
+  border:1px solid #34204d;
+  border-radius:18px;
+  padding:25px;
+}
+
+label{
+  display:block;
+  margin-top:18px;
+  margin-bottom:7px;
+  font-weight:bold;
+}
+
+input,select,textarea{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #34204d;
+  background:#070312;
+  color:white;
+  font-size:16px;
+}
+
+textarea{
+  min-height:180px;
+  resize:vertical;
+}
+
+.btn{
+  margin-top:20px;
+  background:#8B5CF6;
+  color:white;
+  border:0;
+  padding:12px 20px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.note{
+  margin-top:12px;
+  color:#b8b5c5;
+  line-height:1.5;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  margin-top:30px;
+  background:#12061F;
+  color:#b8b5c5;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>📤 RJ APP — Upload Story</h1>
+  <p>Share your story with readers 👑</p>
+</header>
+
+<main>
+
+<a class="back" href="index.html">🏠 Back to Home</a>
+
+<div class="panel">
+
+<h2>✍️ Create New Story</h2>
+
+<p class="note">
+Fill in your story information below.
+</p>
+
+<form>
+
+<label>📖 Story Title</label>
+<input type="text" placeholder="Enter story title">
+
+<label>🏷️ Genre</label>
+<select>
+  <option>Romance</option>
+  <option>Mafia</option>
+  <option>Action</option>
+  <option>Mystery</option>
+  <option>Fantasy</option>
+  <option>Drama</option>
+</select>
+
+<label>📝 Story Description</label>
+<textarea placeholder="Write your story description"></textarea>
+
+<label>📚 Chapter 1</label>
+<textarea placeholder="Write your first chapter here"></textarea>
+
+<button class="btn" type="button">
+📤 Submit Story
+</button>
+
+<p class="note">
+Note: This is currently a front-end demo.
+Real story uploading and saving will be connected
+to the RJ App database later.
+</p>
+
+</form>
+
+</div>
+
+</main>
+
+<footer>
+© 2026 RJ App 👑
+</footer>
+
+</body>
+</html>

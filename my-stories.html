@@ -1,69 +1,585 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>My Stories • RJ App 👑</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#070312;color:white}
-header{background:linear-gradient(135deg,#12061F,#8B5CF6);padding:30px 20px;text-align:center}
-header h1{font-size:32px}
-header p{margin-top:8px;color:#eee}
-main{max-width:900px;margin:auto;padding:25px 15px}
-.back,.btn{display:inline-block;background:#8B5CF6;color:white;text-decoration:none;padding:11px 17px;border-radius:10px}
-.back{margin-bottom:25px}
-.panel{background:#12061F;border:1px solid #34204d;border-radius:18px;padding:25px}
-.story{margin-top:20px;padding:20px;background:#211034;border-radius:14px}
-.story h3{margin-bottom:8px}
-.story p{color:#b8b5c5;line-height:1.5}
-.stats{margin-top:12px;color:#ddd;font-size:13px}
-.btn{margin-top:15px;border:0;cursor:pointer}
-footer{text-align:center;padding:30px;margin-top:30px;background:#12061F;color:#b8b5c5}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#070312;
+  color:white;
+}
+
+header{
+  background:linear-gradient(135deg,#12061F,#8B5CF6);
+  padding:30px 20px;
+  text-align:center;
+}
+
+header h1{
+  font-size:32px;
+}
+
+header p{
+  margin-top:8px;
+  color:#eee;
+}
+
+main{
+  max-width:1000px;
+  margin:auto;
+  padding:25px 15px;
+}
+
+.back,
+.btn{
+  display:inline-block;
+  background:#8B5CF6;
+  color:white;
+  text-decoration:none;
+  padding:11px 17px;
+  border-radius:10px;
+}
+
+.back{
+  margin-bottom:25px;
+}
+
+.panel{
+  background:#12061F;
+  border:1px solid #34204d;
+  border-radius:18px;
+  padding:25px;
+}
+
+.story{
+  margin-top:20px;
+  padding:20px;
+  background:#211034;
+  border-radius:14px;
+  border:1px solid #34204d;
+}
+
+.cover{
+  width:140px;
+  height:190px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#8B5CF6,#A855F7,#070312);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:45px;
+  margin-bottom:15px;
+  overflow:hidden;
+}
+
+.cover img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.story h3{
+  margin-bottom:8px;
+}
+
+.story p{
+  color:#b8b5c5;
+  line-height:1.5;
+  margin-top:6px;
+}
+
+.stats{
+  margin-top:12px;
+  color:#ddd;
+  font-size:13px;
+  line-height:1.8;
+}
+
+.btn{
+  margin-top:15px;
+  border:0;
+  cursor:pointer;
+}
+
+.contract-btn{
+  background:#A855F7;
+  margin-left:8px;
+}
+
+.contract-status{
+  display:inline-block;
+  margin-top:12px;
+  background:#211034;
+  border:1px solid #8B5CF6;
+  padding:8px 12px;
+  border-radius:10px;
+  color:#ddd;
+  font-size:13px;
+}
+
+.description{
+  margin-top:10px;
+  color:#b8b5c5;
+  font-size:14px;
+}
+
+.empty{
+  margin-top:20px;
+  padding:20px;
+  background:#211034;
+  border-radius:14px;
+  color:#b8b5c5;
+  line-height:1.6;
+}
+
+.upload-btn{
+  margin-top:20px;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  margin-top:30px;
+  background:#12061F;
+  color:#b8b5c5;
+}
+
+@media(max-width:600px){
+
+  header h1{
+    font-size:25px;
+  }
+
+  .cover{
+    width:120px;
+    height:165px;
+  }
+
+  .contract-btn{
+    margin-left:0;
+    margin-top:10px;
+  }
+
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>✍️ RJ APP — My Stories</h1>
-<p>Your books and novels 👑</p>
+
+<h1>✍️ RJ APP — My Stories 👑</h1>
+
+<p>Your books and novels</p>
+
 </header>
+
 
 <main>
 
-<a class="back" href="index.html">🏠 Back to Home</a>
+<a class="back" href="index.html">
+🏠 Back to Home
+</a>
+
 
 <div class="panel">
 
 <h2>📚 My Stories</h2>
 
+
+<!-- OLD STORY -->
+
 <div class="story">
+
+<div class="cover">
+👑
+</div>
+
 <h3>The Mafia King's Lost Queen 👑</h3>
+
 <p>By Raja King 👑</p>
+
 <div class="stats">
-👁️ 0 Views &nbsp; ❤️ 0 Likes &nbsp; 👥 0 Fans
+
+📚 Chapters: 1<br>
+
+👁️ 0 Views &nbsp;
+❤️ 0 Likes &nbsp;
+👥 0 Fans
+
 </div>
-<a class="btn" href="mafia-queen.html">📖 Read Story</a>
+
+<a class="btn" href="mafia-queen.html">
+📖 Read Story
+</a>
+
+<button
+class="btn contract-btn"
+onclick="applyContract('The Mafia King\\'s Lost Queen 👑')">
+
+📝 Apply for Contract
+
+</button>
+
+<div id="contract-mafia" class="contract-status" style="display:none;">
+⏳ Contract Application: Pending
 </div>
+
+</div>
+
+
+<!-- OLD STORY -->
 
 <div class="story">
-<h3>The Day I Fell for You ❤️</h3>
-<p>By Raja King 👑</p>
-<div class="stats">
-👁️ 0 Views &nbsp; ❤️ 0 Likes &nbsp; 👥 0 Fans
-</div>
+
+<div class="cover">
+❤️
 </div>
 
-<a class="btn" href="#">📤 Upload New Story</a>
+<h3>The Day I Fell for You ❤️</h3>
+
+<p>By Raja King 👑</p>
+
+<div class="stats">
+
+📚 Chapters: 15<br>
+
+👁️ 0 Views &nbsp;
+❤️ 0 Likes &nbsp;
+👥 0 Fans
+
+</div>
+
+<button
+class="btn contract-btn"
+onclick="applyContract('The Day I Fell for You ❤️')">
+
+📝 Apply for Contract
+
+</button>
+
+<div id="contract-day" class="contract-status" style="display:none;">
+⏳ Contract Application: Pending
+</div>
+
+</div>
+
+
+<!-- NEW UPLOADED STORIES -->
+
+<div id="uploadedStories"></div>
+
+
+<a class="btn upload-btn" href="upload.html">
+📤 Upload New Story
+</a>
 
 </div>
 
 </main>
 
+
 <footer>
+
 © 2026 RJ App 👑
+
 </footer>
+
+
+<script>
+
+function getContractKey(title){
+
+  return "rjContract_" + title;
+
+}
+
+
+function applyContract(title){
+
+  const key = getContractKey(title);
+
+  const alreadyApplied = localStorage.getItem(key);
+
+  if(alreadyApplied){
+
+    alert("⏳ Contract application already submitted!");
+
+    return;
+
+  }
+
+  localStorage.setItem(key,"Pending");
+
+  alert(
+    "📝 Contract Application Submitted!\\n\\n" +
+    "Book: " + title + "\\n\\n" +
+    "Status: Pending ⏳"
+  );
+
+  location.reload();
+
+}
+
+
+function showOldContractStatus(){
+
+  if(localStorage.getItem(
+    getContractKey("The Mafia King's Lost Queen 👑")
+  )){
+
+    const box = document.getElementById("contract-mafia");
+
+    if(box){
+      box.style.display = "inline-block";
+    }
+
+  }
+
+
+  if(localStorage.getItem(
+    getContractKey("The Day I Fell for You ❤️")
+  )){
+
+    const box = document.getElementById("contract-day");
+
+    if(box){
+      box.style.display = "inline-block";
+    }
+
+  }
+
+}
+
+
+function loadUploadedStories(){
+
+  const container =
+    document.getElementById("uploadedStories");
+
+  const stories =
+    JSON.parse(
+      localStorage.getItem("rjUploadedStories") || "[]"
+    );
+
+  if(stories.length === 0){
+
+    return;
+
+  }
+
+
+  stories.forEach(function(story){
+
+    const storyBox =
+      document.createElement("div");
+
+    storyBox.className = "story";
+
+
+    const cover =
+      document.createElement("div");
+
+    cover.className = "cover";
+
+
+    if(story.cover){
+
+      const img =
+        document.createElement("img");
+
+      img.src = story.cover;
+
+      img.alt = story.title + " cover";
+
+      cover.appendChild(img);
+
+    }else{
+
+      cover.textContent = "📖";
+
+    }
+
+
+    storyBox.appendChild(cover);
+
+
+    const title =
+      document.createElement("h3");
+
+    title.textContent =
+      story.title || "Untitled Story 👑";
+
+    storyBox.appendChild(title);
+
+
+    const author =
+      document.createElement("p");
+
+    author.textContent =
+      "By " + (story.author || "Raja King 👑");
+
+    storyBox.appendChild(author);
+
+
+    if(story.description){
+
+      const description =
+        document.createElement("div");
+
+      description.className = "description";
+
+      description.textContent =
+        story.description;
+
+      storyBox.appendChild(description);
+
+    }
+
+
+    const stats =
+      document.createElement("div");
+
+    stats.className = "stats";
+
+
+    const chapterCount =
+      story.chapterCount ||
+      (story.chapters
+        ? story.chapters.length
+        : 1);
+
+
+    stats.innerHTML =
+      "📚 Chapters: " + chapterCount +
+      "<br>👁️ " + (story.views || 0) +
+      " Views &nbsp; ❤️ " + (story.likes || 0) +
+      " Likes &nbsp; 👥 0 Fans";
+
+
+    storyBox.appendChild(stats);
+
+
+    const readButton =
+      document.createElement("a");
+
+    readButton.className = "btn";
+
+    readButton.href = "#";
+
+    readButton.textContent =
+      "📖 Read Story";
+
+    readButton.onclick = function(){
+
+      alert(
+        "📖 Story reader will be connected when chapters are added."
+      );
+
+    };
+
+    storyBox.appendChild(readButton);
+
+
+    const contractButton =
+      document.createElement("button");
+
+    contractButton.className =
+      "btn contract-btn";
+
+    contractButton.textContent =
+      "📝 Apply for Contract";
+
+
+    const contractStatus =
+      document.createElement("div");
+
+    contractStatus.className =
+      "contract-status";
+
+    contractStatus.textContent =
+      "⏳ Contract Application: Pending";
+
+    contractStatus.style.display = "none";
+
+
+    const contractKey =
+      getContractKey(
+        story.title || "Untitled Story"
+      );
+
+
+    if(localStorage.getItem(contractKey)){
+
+      contractStatus.style.display =
+        "inline-block";
+
+    }
+
+
+    contractButton.onclick = function(){
+
+      if(localStorage.getItem(contractKey)){
+
+        alert(
+          "⏳ Contract application already submitted!"
+        );
+
+        return;
+
+      }
+
+
+      localStorage.setItem(
+        contractKey,
+        "Pending"
+      );
+
+
+      contractStatus.style.display =
+        "inline-block";
+
+
+      alert(
+        "📝 Contract Application Submitted!\\n\\n" +
+        "Book: " +
+        (story.title || "Untitled Story") +
+        "\\n\\nStatus: Pending ⏳"
+      );
+
+    };
+
+
+    storyBox.appendChild(contractButton);
+
+    storyBox.appendChild(contractStatus);
+
+
+    container.appendChild(storyBox);
+
+  });
+
+}
+
+
+showOldContractStatus();
+
+loadUploadedStories();
+
+</script>
 
 </body>
 </html>

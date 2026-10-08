@@ -1,1 +1,348 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>RJ App 👑</title> <style> *{ box-sizing:border-box; margin:0; padding:0; } body{ font-family:Arial,sans-serif; background:#070312; color:white; } header{ background:linear-gradient(135deg,#12061F,#8B5CF6); padding:28px 20px; text-align:center; } header h1{ font-size:34px; } header p{ margin-top:8px; color:#eee; } nav{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; padding:15px; background:#12061F; } nav button{ background:#8B5CF6; color:white; border:0; padding:11px 16px; border-radius:20px; cursor:pointer; font-weight:bold; } nav button:hover{ background:#A855F7; } main{ max-width:1100px; margin:auto; padding:25px 15px; } .hero{ background:linear-gradient(135deg,#1b0b2e,#30145c); padding:32px; border-radius:20px; margin-bottom:25px; } .hero h2{ font-size:28px; margin-bottom:10px; } .hero p{ color:#cfc9dc; line-height:1.6; } .section-title{ margin:28px 0 15px; font-size:24px; } .cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px; } .card{ background:#12061F; border:1px solid #34204d; border-radius:16px; padding:20px; transition:.2s; } .card:hover{ transform:translateY(-4px); border-color:#8B5CF6; } .cover{ height:180px; border-radius:12px; background:linear-gradient(135deg,#8B5CF6,#A855F7,#070312); display:flex; align-items:center; justify-content:center; font-size:45px; margin-bottom:15px; } .card h3{ margin-bottom:8px; } .card p{ color:#b8b5c5; font-size:14px; line-height:1.5; } .stats{ display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; } .stat{ background:#211034; padding:7px 10px; border-radius:10px; font-size:13px; color:#ddd; } .btn{ margin-top:15px; background:#8B5CF6; border:0; color:white; padding:10px 16px; border-radius:10px; cursor:pointer; text-decoration:none; display:inline-block; } .btn:hover{ background:#A855F7; } .feature{ text-align:center; } .feature-icon{ font-size:38px; margin-bottom:10px; } .panel{ background:#12061F; border:1px solid #34204d; border-radius:18px; padding:25px; margin-top:18px; } .panel h3{ margin-bottom:10px; } .panel p{ color:#b8b5c5; line-height:1.6; } footer{ text-align:center; padding:30px 15px; margin-top:30px; background:#12061F; color:#b8b5c5; } @media(max-width:600px){ header h1{ font-size:27px; } .hero{ padding:24px; } .hero h2{ font-size:23px; } } </style> </head> <body> <header> <h1>👑 RJ APP</h1> <p>Stories • Novels • Dreams</p> </header> <nav> <button>🏠 Home</button> <button>📖 Stories</button> <button>✍️ My Stories</button> <button>📤 Upload Story</button> <button>👤 Profile</button> <button>💌 Messages</button> <button>🔖 Bookmarks</button> <button>💰 Earnings</button> <button>🛠️ Admin</button> </nav> <main> <section class="hero"> <h2>Welcome to RJ App 👑</h2> <p> Read amazing stories, discover new novels, follow your favourite authors and build your own world of stories. </p> <a href="#stories" class="btn">📖 Explore Stories</a> </section> <h2 class="section-title" id="stories">🔥 Featured Stories</h2> <div class="cards"> <div class="card"> <div class="cover">👑</div> <h3>The Mafia King's Lost Queen</h3> <p> A powerful mafia king, a mysterious queen and a dangerous secret. </p> <div class="stats"> <span class="stat">👁️ 0 Views</span> <span class="stat">❤️ 0 Likes</span> <span class="stat">👥 0 Fans</span> </div> <a href="mafia-queen.html" class="btn"> Read Now </a> </div> <div class="card"> <div class="cover">❤️</div> <h3>The Day I Fell for You</h3> <p> A beautiful love story filled with emotions, secrets and heartbreak. </p> <div class="stats"> <span class="stat">👁️ 0 Views</span> <span class="stat">❤️ 0 Likes</span> <span class="stat">👥 0 Fans</span> </div> <button class="btn"> Read Now </button> </div> <div class="card"> <div class="cover">🥀</div> <h3>The Broken Heart</h3> <p> Sometimes the person we love becomes the reason our heart breaks. </p> <div class="stats"> <span class="stat">👁️ 0 Views</span> <span class="stat">❤️ 0 Likes</span> <span class="stat">👥 0 Fans</span> </div> <button class="btn"> Read Now </button> </div> </div> <h2 class="section-title">✨ RJ App Features</h2> <div class="cards"> <div class="card feature"> <div class="feature-icon">👁️</div> <h3>Book Views</h3> <p> Readers can view books and authors can see their total book views. </p> </div> <div class="card feature"> <div class="feature-icon">❤️</div> <h3>Likes</h3> <p> Readers can like their favourite stories. </p> </div> <div class="card feature"> <div class="feature-icon">👥</div> <h3>Fans</h3> <p> Readers can follow authors and become their fans. </p> </div> <div class="card feature"> <div class="feature-icon">💬</div> <h3>Comments</h3> <p> Readers can share their thoughts on stories. </p> </div> <div class="card feature"> <div class="feature-icon">💌</div> <h3>Messages</h3> <p> Users will be able to communicate with each other. </p> </div> <div class="card feature"> <div class="feature-icon">🔖</div> <h3>Bookmarks</h3> <p> Save favourite books and continue reading later. </p> </div> <div class="card feature"> <div class="feature-icon">📤</div> <h3>Upload Stories</h3> <p> Authors will be able to upload their own books and chapters. </p> </div> <div class="card feature"> <div class="feature-icon">💰</div> <h3>Author Earnings</h3> <p> Authors can eventually earn from their stories through the RJ App earning system. </p> </div> </div> <h2 class="section-title">👤 User Profile</h2> <div class="panel"> <h3>Raja King 👑</h3> <p> Author • Reader • Story Creator </p> <div class="stats"> <span class="stat">👥 0 Fans</span> <span class="stat">📚 0 Stories</span> <span class="stat">👁️ 0 Views</span> <span class="stat">❤️ 0 Likes</span> </div> </div> <h2 class="section-title">✍️ My Stories</h2> <div class="panel"> <h3>📚 Your Stories</h3> <p> Your uploaded books and novels will appear here. </p> <button class="btn"> 📤 Upload New Story </button> </div> <h2 class="section-title">💌 Messages</h2> <div class="panel"> <h3>💬 Your Messages</h3> <p> Your conversations with readers and authors will appear here. </p> </div> <h2 class="section-title">🔖 Bookmarks</h2> <div class="panel"> <h3>❤️ Saved Stories</h3> <p> Books you bookmark will appear here. </p> </div> <h2 class="section-title">💰 Earnings</h2> <div class="panel"> <h3>💰 Author Earnings</h3> <p> Your future story earnings and balance will appear here. </p> <div class="stats"> <span class="stat">💵 Balance: $0</span> <span class="stat">📚 Paid Stories: 0</span> </div> </div> <h2 class="section-title">🛠️ Admin Panel</h2> <div class="panel"> <h3>👑 RJ App Administration</h3> <p> Admin tools will allow the owner to manage users, books, comments, reports and earnings. </p> </div> </main> <footer> <p>© 2026 RJ App 👑</p> <p> Welcome to Raja King World </p> </footer> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RJ App 👑</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#070312;
+  color:white;
+}
+
+header{
+  background:linear-gradient(135deg,#12061F,#8B5CF6);
+  padding:28px 20px;
+  text-align:center;
+}
+
+header h1{
+  font-size:34px;
+}
+
+header p{
+  margin-top:8px;
+  color:#eee;
+}
+
+nav{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  padding:15px;
+  background:#12061F;
+}
+
+nav a{
+  background:#8B5CF6;
+  color:white;
+  text-decoration:none;
+  padding:11px 16px;
+  border-radius:20px;
+  font-weight:bold;
+}
+
+nav a:hover{
+  background:#A855F7;
+}
+
+main{
+  max-width:1100px;
+  margin:auto;
+  padding:25px 15px;
+}
+
+.hero{
+  background:linear-gradient(135deg,#1b0b2e,#30145c);
+  padding:32px;
+  border-radius:20px;
+  margin-bottom:25px;
+}
+
+.hero h2{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.hero p{
+  color:#cfc9dc;
+  line-height:1.6;
+}
+
+.btn{
+  margin-top:15px;
+  background:#8B5CF6;
+  color:white;
+  padding:10px 16px;
+  border-radius:10px;
+  text-decoration:none;
+  display:inline-block;
+}
+
+.section-title{
+  margin:28px 0 15px;
+  font-size:24px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:18px;
+}
+
+.card{
+  background:#12061F;
+  border:1px solid #34204d;
+  border-radius:16px;
+  padding:20px;
+}
+
+.cover{
+  height:180px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#8B5CF6,#A855F7,#070312);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:45px;
+  margin-bottom:15px;
+}
+
+.card h3{
+  margin-bottom:8px;
+}
+
+.card p{
+  color:#b8b5c5;
+  line-height:1.5;
+}
+
+.stats{
+  margin-top:12px;
+  color:#ddd;
+  font-size:13px;
+}
+
+.feature{
+  text-align:center;
+}
+
+.feature-icon{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+footer{
+  text-align:center;
+  padding:30px 15px;
+  margin-top:30px;
+  background:#12061F;
+  color:#b8b5c5;
+}
+
+@media(max-width:600px){
+  header h1{
+    font-size:27px;
+  }
+
+  .hero{
+    padding:24px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>👑 RJ APP</h1>
+  <p>Stories • Novels • Dreams</p>
+</header>
+
+<nav>
+
+  <a href="index.html">🏠 Home</a>
+
+  <a href="stories.html">📖 Stories</a>
+
+  <a href="my-stories.html">✍️ My Stories</a>
+
+  <a href="upload.html">📤 Upload Story</a>
+
+  <a href="profile.html">👤 Profile</a>
+
+  <a href="messages.html">💌 Messages</a>
+
+  <a href="bookmarks.html">🔖 Bookmarks</a>
+
+  <a href="earnings.html">💰 Earnings</a>
+
+  <a href="admin.html">🛠️ Admin</a>
+
+</nav>
+
+<main>
+
+<section class="hero">
+
+  <h2>Welcome to RJ App 👑</h2>
+
+  <p>
+    Read amazing stories, discover new novels,
+    follow your favourite authors and build your
+    own world of stories.
+  </p>
+
+  <a href="stories.html" class="btn">
+    📖 Explore Stories
+  </a>
+
+</section>
+
+<h2 class="section-title">🔥 Featured Stories</h2>
+
+<div class="cards">
+
+  <div class="card">
+
+    <div class="cover">👑</div>
+
+    <h3>The Mafia King's Lost Queen</h3>
+
+    <p>
+      A powerful mafia king, a mysterious queen
+      and a dangerous secret.
+    </p>
+
+    <div class="stats">
+      👁️ 0 Views &nbsp; ❤️ 0 Likes &nbsp; 👥 0 Fans
+    </div>
+
+    <a href="mafia-queen.html" class="btn">
+      📖 Read Now
+    </a>
+
+  </div>
+
+
+  <div class="card">
+
+    <div class="cover">❤️</div>
+
+    <h3>The Day I Fell for You</h3>
+
+    <p>
+      A beautiful love story filled with emotions,
+      secrets and heartbreak.
+    </p>
+
+    <div class="stats">
+      👁️ 0 Views &nbsp; ❤️ 0 Likes &nbsp; 👥 0 Fans
+    </div>
+
+    <a href="stories.html" class="btn">
+      📖 Read Stories
+    </a>
+
+  </div>
+
+
+  <div class="card">
+
+    <div class="cover">🥀</div>
+
+    <h3>The Broken Heart</h3>
+
+    <p>
+      Sometimes the person we love becomes
+      the reason our heart breaks.
+    </p>
+
+    <div class="stats">
+      👁️ 0 Views &nbsp; ❤️ 0 Likes &nbsp; 👥 0 Fans
+    </div>
+
+    <a href="stories.html" class="btn">
+      📖 Read Stories
+    </a>
+
+  </div>
+
+</div>
+
+<h2 class="section-title">✨ RJ App Features</h2>
+
+<div class="cards">
+
+  <div class="card feature">
+    <div class="feature-icon">👁️</div>
+    <h3>Book Views</h3>
+    <p>Readers can view books and authors can see their views.</p>
+  </div>
+
+  <div class="card feature">
+    <div class="feature-icon">❤️</div>
+    <h3>Likes</h3>
+    <p>Readers can like their favourite stories.</p>
+  </div>
+
+  <div class="card feature">
+    <div class="feature-icon">👥</div>
+    <h3>Fans</h3>
+    <p>Readers can follow their favourite authors.</p>
+  </div>
+
+  <div class="card feature">
+    <div class="feature-icon">💬</div>
+    <h3>Comments</h3>
+    <p>Readers can share their thoughts on stories.</p>
+  </div>
+
+  <div class="card feature">
+    <div class="feature-icon">💌</div>
+    <h3>Messages</h3>
+    <p>Users can communicate with each other.</p>
+  </div>
+
+  <div class="card feature">
+    <div class="feature-icon">🔖</div>
+    <h3>Bookmarks</h3>
+    <p>Save favourite books and continue reading later.</p>
+  </div>
+
+  <div class="card feature">
+    <div class="feature-icon">📤</div>
+    <h3>Upload Stories</h3>
+    <p>Authors can upload their own books and chapters.</p>
+  </div>
+
+  <div class="card feature">
+    <div class="feature-icon">💰</div>
+    <h3>Author Earnings</h3>
+    <p>Authors can eventually earn from their stories.</p>
+  </div>
+
+</div>
+
+</main>
+
+<footer>
+
+  <p>© 2026 RJ App 👑</p>
+
+  <p>Welcome to Raja King World</p>
+
+</footer>
+
+</body>
+</html>

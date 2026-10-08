@@ -3,10 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bookmarks • RJ App 👑</title>
+<title>RJ App - Bookmarks</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
 body{
   font-family:Arial,sans-serif;
@@ -16,70 +20,163 @@ body{
 
 header{
   background:linear-gradient(135deg,#12061F,#8B5CF6);
-  padding:30px 20px;
+  padding:28px 20px;
   text-align:center;
 }
 
-header h1{font-size:32px}
+header h1{
+  font-size:32px;
+}
 
 header p{
   margin-top:8px;
   color:#eee;
 }
 
+nav{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  padding:15px;
+  background:#12061F;
+}
+
+nav a{
+  background:#8B5CF6;
+  color:white;
+  text-decoration:none;
+  padding:11px 16px;
+  border-radius:20px;
+  font-weight:bold;
+}
+
 main{
-  max-width:900px;
+  max-width:1000px;
   margin:auto;
   padding:25px 15px;
 }
 
-.back{
-  display:inline-block;
-  background:#8B5CF6;
-  color:white;
-  text-decoration:none;
-  padding:11px 17px;
-  border-radius:10px;
+.hero{
+  background:linear-gradient(135deg,#1b0b2e,#30145c);
+  padding:30px;
+  border-radius:20px;
   margin-bottom:25px;
 }
 
-.panel{
+.hero h2{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.hero p{
+  color:#cfc9dc;
+  line-height:1.6;
+}
+
+.card{
   background:#12061F;
   border:1px solid #34204d;
   border-radius:18px;
-  padding:25px;
-}
-
-.book{
-  background:#211034;
-  border-radius:14px;
   padding:20px;
-  margin-top:18px;
+  margin-bottom:18px;
 }
 
-.book h3{margin-bottom:8px}
+.cover{
+  height:180px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#8B5CF6,#A855F7,#070312);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:55px;
+  margin-bottom:18px;
+}
 
-.book p{
+.card h3{
+  font-size:23px;
+  margin-bottom:8px;
+}
+
+.card p{
   color:#b8b5c5;
-  line-height:1.5;
+  line-height:1.6;
+}
+
+.stats{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:15px;
+}
+
+.stat{
+  background:#211034;
+  padding:7px 10px;
+  border-radius:10px;
+  font-size:13px;
+  color:#ddd;
 }
 
 .btn{
-  display:inline-block;
   margin-top:15px;
   background:#8B5CF6;
+  border:0;
   color:white;
-  text-decoration:none;
-  padding:10px 16px;
+  padding:11px 17px;
   border-radius:10px;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-block;
+  font-weight:bold;
+}
+
+.btn:hover{
+  background:#A855F7;
+}
+
+.remove{
+  background:#3b173f;
+  margin-left:8px;
+}
+
+.remove:hover{
+  background:#5a1d5f;
+}
+
+.empty{
+  text-align:center;
+  background:#12061F;
+  border:1px solid #34204d;
+  border-radius:18px;
+  padding:35px 20px;
+  color:#b8b5c5;
 }
 
 footer{
   text-align:center;
-  padding:30px;
+  padding:30px 15px;
   margin-top:30px;
   background:#12061F;
   color:#b8b5c5;
+}
+
+@media(max-width:600px){
+  header h1{
+    font-size:27px;
+  }
+
+  .hero{
+    padding:24px;
+  }
+
+  .hero h2{
+    font-size:23px;
+  }
+
+  .remove{
+    margin-left:0;
+  }
 }
 </style>
 </head>
@@ -87,51 +184,137 @@ footer{
 <body>
 
 <header>
-  <h1>🔖 RJ APP — Bookmarks</h1>
-  <p>Your saved stories 👑</p>
+  <h1>🔖 RJ APP BOOKMARKS</h1>
+  <p>Your Saved Stories 👑</p>
 </header>
+
+<nav>
+  <a href="index.html">🏠 Home</a>
+  <a href="stories.html">📖 Stories</a>
+  <a href="my-stories.html">✍️ My Stories</a>
+  <a href="profile.html">👤 Profile</a>
+</nav>
 
 <main>
 
-<a class="back" href="index.html">🏠 Back to Home</a>
+<section class="hero">
+  <h2>🔖 My Bookmarks</h2>
+  <p>
+    Yahan aapki saved stories nazar aayengi.
+    Story ko bookmark karne ke baad woh yahan save hogi.
+  </p>
+</section>
 
-<div class="panel">
-
-  <h2>🔖 Saved Stories</h2>
-
-  <div class="book">
-
-    <h3>👑 The Mafia King's Lost Queen</h3>
-
-    <p>
-      A powerful mafia king, a mysterious queen
-      and a dangerous secret.
-    </p>
-
-    <a class="btn" href="mafia-queen.html">
-      📖 Continue Reading
-    </a>
-
-  </div>
-
-  <div class="book">
-
-    <h3>❤️ The Day I Fell for You</h3>
-
-    <p>
-      A beautiful love story filled with emotions,
-      secrets and heartbreak.
-    </p>
-
-  </div>
-
-</div>
+<div id="bookmarkList"></div>
 
 </main>
 
 <footer>
-  © 2026 RJ App 👑
+  <p>© 2026 RJ App 👑</p>
+  <p>Welcome to Raja King World</p>
 </footer>
+
+<script>
+
+const defaultStory = {
+  id: "mafia-queen",
+  title: "The Mafia King's Lost Queen 👑",
+  description: "A powerful mafia king, a mysterious queen and a dangerous secret.",
+  icon: "👑",
+  link: "mafia-queen.html",
+  views: 0,
+  likes: 0
+};
+
+function getBookmarks(){
+  try{
+    return JSON.parse(localStorage.getItem("rjBookmarks")) || [];
+  }catch(error){
+    return [];
+  }
+}
+
+function saveBookmarks(bookmarks){
+  localStorage.setItem("rjBookmarks", JSON.stringify(bookmarks));
+}
+
+function renderBookmarks(){
+
+  const list = document.getElementById("bookmarkList");
+  const bookmarks = getBookmarks();
+
+  if(bookmarks.length === 0){
+
+    list.innerHTML = `
+      <div class="empty">
+        <div style="font-size:50px;margin-bottom:15px;">🔖</div>
+        <h3>No Bookmarks Yet</h3>
+        <p style="margin-top:10px;">
+          Abhi koi story bookmark nahi ki gayi.
+        </p>
+        <a href="stories.html" class="btn">
+          📖 Explore Stories
+        </a>
+      </div>
+    `;
+
+    return;
+  }
+
+  list.innerHTML = "";
+
+  bookmarks.forEach(function(book){
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <div class="cover">${book.icon || "📖"}</div>
+
+      <h3>${book.title}</h3>
+
+      <p>${book.description || "Saved story"}</p>
+
+      <div class="stats">
+        <span class="stat">👁️ ${book.views || 0} Views</span>
+        <span class="stat">❤️ ${book.likes || 0} Likes</span>
+        <span class="stat">🔖 Saved</span>
+      </div>
+
+      <a href="${book.link}" class="btn">
+        📖 Read Now
+      </a>
+
+      <button class="btn remove" data-id="${book.id}">
+        🗑️ Remove
+      </button>
+    `;
+
+    list.appendChild(card);
+  });
+
+  document.querySelectorAll(".remove").forEach(function(button){
+
+    button.addEventListener("click", function(){
+
+      const id = this.dataset.id;
+
+      const updated = getBookmarks().filter(function(book){
+        return book.id !== id;
+      });
+
+      saveBookmarks(updated);
+
+      renderBookmarks();
+
+    });
+
+  });
+}
+
+renderBookmarks();
+
+</script>
 
 </body>
 </html>

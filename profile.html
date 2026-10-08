@@ -53,24 +53,37 @@ main{
 }
 
 .avatar{
-  width:100px;
-  height:100px;
+  width:110px;
+  height:110px;
   margin:auto;
   border-radius:50%;
   background:#8B5CF6;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:50px;
+  font-size:55px;
 }
 
 h2{
   margin-top:15px;
+  font-size:27px;
 }
 
 .role{
   color:#b8b5c5;
   margin-top:8px;
+}
+
+.bio{
+  color:#b8b5c5;
+  margin-top:12px;
+  line-height:1.5;
+}
+
+.info{
+  margin-top:10px;
+  color:#b8b5c5;
+  font-size:14px;
 }
 
 .stats{
@@ -96,14 +109,63 @@ h2{
   font-size:12px;
 }
 
-.btn{
-  display:inline-block;
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
   margin-top:25px;
+}
+
+.btn{
+  border:none;
   background:#8B5CF6;
   color:white;
   text-decoration:none;
-  padding:11px 18px;
+  padding:12px 18px;
   border-radius:10px;
+  cursor:pointer;
+  font-size:15px;
+}
+
+.edit-box{
+  display:none;
+  margin-top:25px;
+  background:#211034;
+  padding:20px;
+  border-radius:15px;
+  text-align:left;
+}
+
+.edit-box h3{
+  margin-bottom:15px;
+}
+
+label{
+  display:block;
+  margin-top:12px;
+  margin-bottom:6px;
+  color:#b8b5c5;
+}
+
+input,textarea{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  background:#12061F;
+  color:white;
+  outline:none;
+}
+
+textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+.save{
+  margin-top:18px;
+  width:100%;
 }
 
 footer{
@@ -117,6 +179,10 @@ footer{
 @media(max-width:600px){
   .stats{
     grid-template-columns:repeat(2,1fr);
+  }
+
+  header h1{
+    font-size:25px;
   }
 }
 </style>
@@ -134,12 +200,20 @@ footer{
 
 <div class="profile">
 
-  <div class="avatar">👑</div>
+  <div class="avatar" id="avatar">👑</div>
 
-  <h2>Raja King 👑</h2>
+  <h2 id="profileName">Raja King 👑</h2>
 
-  <p class="role">
+  <p class="role" id="profileRole">
     Author • Reader • Story Creator
+  </p>
+
+  <p class="bio" id="profileBio">
+    Welcome to Raja King World 👑
+  </p>
+
+  <p class="info" id="profileLocation">
+    📍 Taxila, Pakistan
   </p>
 
   <div class="stats">
@@ -166,9 +240,42 @@ footer{
 
   </div>
 
-  <a class="btn" href="stories.html">
-    📖 My Stories
-  </a>
+  <div class="buttons">
+
+    <button class="btn" id="editBtn">
+      ✏️ Edit Profile
+    </button>
+
+    <a class="btn" href="stories.html">
+      📖 My Stories
+    </a>
+
+  </div>
+
+  <div class="edit-box" id="editBox">
+
+    <h3>✏️ Edit Your Profile</h3>
+
+    <label>Name</label>
+    <input id="nameInput" type="text" placeholder="Enter your name">
+
+    <label>Role</label>
+    <input id="roleInput" type="text" placeholder="Author • Reader">
+
+    <label>Bio</label>
+    <textarea id="bioInput" placeholder="Write something about yourself"></textarea>
+
+    <label>Location</label>
+    <input id="locationInput" type="text" placeholder="Your location">
+
+    <label>Avatar Emoji</label>
+    <input id="avatarInput" type="text" placeholder="👑">
+
+    <button class="btn save" id="saveBtn">
+      💾 Save Changes
+    </button>
+
+  </div>
 
 </div>
 
@@ -177,6 +284,89 @@ footer{
 <footer>
   © 2026 RJ App 👑
 </footer>
+
+<script>
+
+const editBtn = document.getElementById("editBtn");
+const editBox = document.getElementById("editBox");
+const saveBtn = document.getElementById("saveBtn");
+
+const profileName = document.getElementById("profileName");
+const profileRole = document.getElementById("profileRole");
+const profileBio = document.getElementById("profileBio");
+const profileLocation = document.getElementById("profileLocation");
+const avatar = document.getElementById("avatar");
+
+const nameInput = document.getElementById("nameInput");
+const roleInput = document.getElementById("roleInput");
+const bioInput = document.getElementById("bioInput");
+const locationInput = document.getElementById("locationInput");
+const avatarInput = document.getElementById("avatarInput");
+
+const savedProfile = JSON.parse(
+  localStorage.getItem("rjProfile") || "null"
+);
+
+if(savedProfile){
+
+  profileName.textContent = savedProfile.name;
+  profileRole.textContent = savedProfile.role;
+  profileBio.textContent = savedProfile.bio;
+  profileLocation.textContent = "📍 " + savedProfile.location;
+  avatar.textContent = savedProfile.avatar;
+
+}
+
+editBtn.addEventListener("click", function(){
+
+  nameInput.value = profileName.textContent;
+  roleInput.value = profileRole.textContent;
+  bioInput.value = profileBio.textContent;
+  locationInput.value = profileLocation.textContent.replace("📍 ","");
+  avatarInput.value = avatar.textContent;
+
+  editBox.style.display =
+    editBox.style.display === "block" ? "none" : "block";
+
+});
+
+saveBtn.addEventListener("click", function(){
+
+  const profile = {
+
+    name: nameInput.value.trim() || "Raja King 👑",
+
+    role: roleInput.value.trim() ||
+    "Author • Reader • Story Creator",
+
+    bio: bioInput.value.trim() ||
+    "Welcome to Raja King World 👑",
+
+    location: locationInput.value.trim() ||
+    "Pakistan",
+
+    avatar: avatarInput.value.trim() || "👑"
+
+  };
+
+  localStorage.setItem(
+    "rjProfile",
+    JSON.stringify(profile)
+  );
+
+  profileName.textContent = profile.name;
+  profileRole.textContent = profile.role;
+  profileBio.textContent = profile.bio;
+  profileLocation.textContent = "📍 " + profile.location;
+  avatar.textContent = profile.avatar;
+
+  editBox.style.display = "none";
+
+  alert("Profile updated successfully! 👑🔥");
+
+});
+
+</script>
 
 </body>
 </html>

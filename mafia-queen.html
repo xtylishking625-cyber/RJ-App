@@ -1,21 +1,415 @@
- He was the most feared mafia king in the city.
-  Powerful, cold and impossible to reach.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Mafia King's Lost Queen 👑</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#070312;
+  color:white;
+  line-height:1.6;
+}
+
+header{
+  background:linear-gradient(135deg,#12061F,#8B5CF6);
+  padding:35px 20px;
+  text-align:center;
+}
+
+header h1{
+  font-size:30px;
+}
+
+main{
+  max-width:800px;
+  margin:auto;
+  padding:25px 15px;
+}
+
+.back{
+  display:inline-block;
+  background:#8B5CF6;
+  color:white;
+  text-decoration:none;
+  padding:10px 16px;
+  border-radius:10px;
+  margin-bottom:20px;
+}
+
+.book{
+  background:#12061F;
+  border:1px solid #34204d;
+  border-radius:20px;
+  padding:25px;
+}
+
+.cover{
+  background:linear-gradient(135deg,#070312,#8B5CF6);
+  border-radius:15px;
+  min-height:180px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+  margin-bottom:20px;
+}
+
+.cover h2{
+  font-size:28px;
+}
+
+.author{
+  color:#B8B5C5;
+  margin-bottom:20px;
+}
+
+.stats{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:20px 0;
+}
+
+.action{
+  border:none;
+  background:#211034;
+  color:white;
+  padding:11px 15px;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:15px;
+}
+
+.action:hover{
+  background:#8B5CF6;
+}
+
+.action.liked{
+  background:#8B5CF6;
+}
+
+.chapter{
+  background:#211034;
+  padding:20px;
+  border-radius:15px;
+  margin-top:20px;
+}
+
+.chapter h3{
+  margin-bottom:12px;
+  color:#A855F7;
+}
+
+.comments{
+  margin-top:25px;
+}
+
+.comments h3{
+  margin-bottom:15px;
+}
+
+.comment-form{
+  display:flex;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.comment-form input{
+  flex:1;
+  min-width:0;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #8B5CF6;
+  background:#070312;
+  color:white;
+}
+
+.comment-form button{
+  border:none;
+  background:#8B5CF6;
+  color:white;
+  padding:12px 16px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.comment{
+  background:#211034;
+  padding:12px;
+  border-radius:10px;
+  margin-top:10px;
+}
+
+.comment strong{
+  color:#A855F7;
+}
+
+.empty{
+  color:#B8B5C5;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  margin-top:30px;
+  background:#12061F;
+  color:#B8B5C5;
+}
+
+@media(max-width:600px){
+  .comment-form{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>👑 RJ APP — Story</h1>
+</header>
+
+<main>
+
+<a class="back" href="stories.html">
+  ← Back to Stories
+</a>
+
+<div class="book">
+
+  <div class="cover">
+    <h2>The Mafia King's Lost Queen 👑</h2>
+  </div>
+
+  <h2>The Mafia King's Lost Queen 👑</h2>
+
+  <p class="author">
+    ✍️ By Raja King
   </p>
 
-  <p>
-  But everything changed when a mysterious girl entered his world.
-  She had no idea who he was, and he had no idea why his heart
-  reacted differently whenever she was near.
-  </p>
+  <div class="stats">
 
-  <p>
-  One secret would soon change both of their lives forever.
-  </p>
+    <button class="action" id="likeBtn">
+      ❤️ Like <span id="likeCount">0</span>
+    </button>
+
+    <button class="action">
+      👁️ Views <span id="viewCount">0</span>
+    </button>
+
+  </div>
+
+  <div class="chapter">
+
+    <h3>Chapter 1 — The Lost Queen</h3>
+
+    <p>
+      The night was dark and silent when the mysterious
+      mafia king returned to his mansion.
+    </p>
+
+    <br>
+
+    <p>
+      Everyone feared his name, but nobody knew the secret
+      hidden inside his heart.
+    </p>
+
+    <br>
+
+    <p>
+      Then she appeared again—the woman he had spent years
+      trying to forget.
+    </p>
+
+    <br>
+
+    <p>
+      She was his lost queen.
+    </p>
+
+  </div>
+
+  <div class="comments">
+
+    <h3>💬 Comments</h3>
+
+    <div class="comment-form">
+
+      <input
+        type="text"
+        id="commentInput"
+        placeholder="Write a comment..."
+      >
+
+      <button id="commentBtn">
+        Comment
+      </button>
+
+    </div>
+
+    <div id="commentsList">
+      <p class="empty">No comments yet. Be the first! ❤️</p>
+    </div>
+
+  </div>
+
 </div>
 
-<a class="back" href="index.html">🏠 Back to RJ App</a>
+</main>
 
-</div>
+<footer>
+  © 2026 RJ App 👑
+</footer>
+
+<script>
+
+const bookKey = "mafiaQueen";
+
+let likes =
+  Number(localStorage.getItem(bookKey + "_likes") || 0);
+
+let liked =
+  localStorage.getItem(bookKey + "_liked") === "true";
+
+let views =
+  Number(localStorage.getItem(bookKey + "_views") || 0);
+
+let comments =
+  JSON.parse(
+    localStorage.getItem(bookKey + "_comments") || "[]"
+  );
+
+views++;
+
+localStorage.setItem(
+  bookKey + "_views",
+  views
+);
+
+document.getElementById("likeCount").textContent = likes;
+
+document.getElementById("viewCount").textContent = views;
+
+const likeBtn =
+  document.getElementById("likeBtn");
+
+if(liked){
+  likeBtn.classList.add("liked");
+}
+
+likeBtn.addEventListener("click",function(){
+
+  if(liked){
+
+    likes--;
+
+    liked = false;
+
+    likeBtn.classList.remove("liked");
+
+  }else{
+
+    likes++;
+
+    liked = true;
+
+    likeBtn.classList.add("liked");
+
+  }
+
+  localStorage.setItem(
+    bookKey + "_likes",
+    likes
+  );
+
+  localStorage.setItem(
+    bookKey + "_liked",
+    liked
+  );
+
+  document.getElementById("likeCount").textContent =
+    likes;
+
+});
+
+function showComments(){
+
+  const list =
+    document.getElementById("commentsList");
+
+  if(comments.length === 0){
+
+    list.innerHTML =
+      '<p class="empty">No comments yet. Be the first! ❤️</p>';
+
+    return;
+  }
+
+  list.innerHTML = "";
+
+  comments.forEach(function(comment){
+
+    const div =
+      document.createElement("div");
+
+    div.className = "comment";
+
+    div.innerHTML =
+      "<strong>Reader 👤</strong><br>" +
+      comment;
+
+    list.appendChild(div);
+
+  });
+
+}
+
+document
+.getElementById("commentBtn")
+.addEventListener("click",function(){
+
+  const input =
+    document.getElementById("commentInput");
+
+  const text =
+    input.value.trim();
+
+  if(text === ""){
+
+    alert("Pehle comment likho ❤️");
+
+    return;
+
+  }
+
+  comments.push(text);
+
+  localStorage.setItem(
+    bookKey + "_comments",
+    JSON.stringify(comments)
+  );
+
+  input.value = "";
+
+  showComments();
+
+});
+
+showComments();
+
+</script>
 
 </body>
 </html>

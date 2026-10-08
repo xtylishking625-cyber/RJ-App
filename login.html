@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RJ App - Login</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #070312, #12061F);
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .login-box {
+      width: 100%;
+      max-width: 430px;
+      background: rgba(18, 6, 31, 0.95);
+      border: 1px solid #8B5CF6;
+      border-radius: 22px;
+      padding: 35px 28px;
+      box-shadow: 0 0 30px rgba(139, 92, 246, 0.25);
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 42px;
+      font-weight: bold;
+      color: #A855F7;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #B8B5C5;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      margin-bottom: 22px;
+      font-size: 28px;
+    }
+
+    .input-group {
+      text-align: left;
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #B8B5C5;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid #8B5CF6;
+      background: #070312;
+      color: white;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #A855F7;
+      box-shadow: 0 0 10px rgba(168, 85, 247, 0.25);
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 14px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #8B5CF6, #A855F7);
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .login-btn:hover {
+      opacity: 0.9;
+    }
+
+    .signup {
+      margin-top: 22px;
+      color: #B8B5C5;
+    }
+
+    .signup a {
+      color: #A855F7;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 22px;
+      color: #B8B5C5;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .message {
+      margin-top: 15px;
+      color: #A855F7;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-box">
+
+    <div class="logo">RJ 👑</div>
+    <div class="subtitle">Welcome to RJ App</div>
+
+    <h1>Login 🔐</h1>
+
+    <form id="loginForm">
+
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+      </div>
+
+      <button type="submit" class="login-btn">
+        Login
+      </button>
+
+    </form>
+
+    <div class="message" id="message">
+      Login page ready! 🔥
+    </div>
+
+    <div class="signup">
+      Don't have an account?
+      <a href="#">Sign Up</a>
+    </div>
+
+    <a class="back" href="index.html">← Back to Home</a>
+
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      document.getElementById("message").style.display = "block";
+    });
+  </script>
+
+</body>
+</html>

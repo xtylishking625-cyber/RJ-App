@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,6 +49,9 @@ main{
   text-decoration:none;
   padding:11px 17px;
   border-radius:10px;
+  border:0;
+  cursor:pointer;
+  font-weight:bold;
 }
 
 .back{
@@ -72,16 +74,16 @@ main{
 }
 
 .cover{
-  width:140px;
-  height:190px;
+  width:150px;
+  height:200px;
   border-radius:12px;
   background:linear-gradient(135deg,#8B5CF6,#A855F7,#070312);
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:45px;
-  margin-bottom:15px;
   overflow:hidden;
+  font-size:50px;
+  margin-bottom:15px;
 }
 
 .cover img{
@@ -97,7 +99,7 @@ main{
 .story p{
   color:#b8b5c5;
   line-height:1.5;
-  margin-top:6px;
+  margin-top:5px;
 }
 
 .stats{
@@ -109,30 +111,32 @@ main{
 
 .btn{
   margin-top:15px;
-  border:0;
-  cursor:pointer;
+  margin-right:7px;
 }
 
-.contract-btn{
+.contract{
   background:#A855F7;
-  margin-left:8px;
 }
 
-.contract-status{
-  display:inline-block;
+.contract.applied{
+  background:#34204d;
+  cursor:default;
+}
+
+.status{
+  display:none;
   margin-top:12px;
-  background:#211034;
-  border:1px solid #8B5CF6;
-  padding:8px 12px;
+  padding:9px 12px;
   border-radius:10px;
+  border:1px solid #8B5CF6;
   color:#ddd;
   font-size:13px;
 }
 
 .description{
-  margin-top:10px;
   color:#b8b5c5;
   font-size:14px;
+  margin-top:10px;
 }
 
 .empty{
@@ -141,11 +145,6 @@ main{
   background:#211034;
   border-radius:14px;
   color:#b8b5c5;
-  line-height:1.6;
-}
-
-.upload-btn{
-  margin-top:20px;
 }
 
 footer{
@@ -163,13 +162,8 @@ footer{
   }
 
   .cover{
-    width:120px;
-    height:165px;
-  }
-
-  .contract-btn{
-    margin-left:0;
-    margin-top:10px;
+    width:125px;
+    height:170px;
   }
 
 }
@@ -177,7 +171,9 @@ footer{
 </style>
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -190,6 +186,7 @@ footer{
 
 <main>
 
+
 <a class="back" href="index.html">
 🏠 Back to Home
 </a>
@@ -200,7 +197,7 @@ footer{
 <h2>📚 My Stories</h2>
 
 
-<!-- OLD STORY -->
+<!-- STORY 1 -->
 
 <div class="story">
 
@@ -213,13 +210,10 @@ footer{
 <p>By Raja King 👑</p>
 
 <div class="stats">
-
 📚 Chapters: 1<br>
-
 👁️ 0 Views &nbsp;
 ❤️ 0 Likes &nbsp;
 👥 0 Fans
-
 </div>
 
 <a class="btn" href="mafia-queen.html">
@@ -227,21 +221,26 @@ footer{
 </a>
 
 <button
-class="btn contract-btn"
-onclick="applyContract('The Mafia King\\'s Lost Queen 👑')">
+class="btn contract"
+type="button"
+data-contract="lost-queen">
 
 📝 Apply for Contract
 
 </button>
 
-<div id="contract-mafia" class="contract-status" style="display:none;">
+<div
+class="status"
+id="status-lost-queen">
+
 ⏳ Contract Application: Pending
-</div>
 
 </div>
 
+</div>
 
-<!-- OLD STORY -->
+
+<!-- STORY 2 -->
 
 <div class="story">
 
@@ -254,38 +253,45 @@ onclick="applyContract('The Mafia King\\'s Lost Queen 👑')">
 <p>By Raja King 👑</p>
 
 <div class="stats">
-
 📚 Chapters: 15<br>
-
 👁️ 0 Views &nbsp;
 ❤️ 0 Likes &nbsp;
 👥 0 Fans
-
 </div>
 
 <button
-class="btn contract-btn"
-onclick="applyContract('The Day I Fell for You ❤️')">
+class="btn contract"
+type="button"
+data-contract="day-i-fell">
 
 📝 Apply for Contract
 
 </button>
 
-<div id="contract-day" class="contract-status" style="display:none;">
+<div
+class="status"
+id="status-day-i-fell">
+
 ⏳ Contract Application: Pending
-</div>
 
 </div>
 
+</div>
 
-<!-- NEW UPLOADED STORIES -->
+
+<!-- UPLOADED STORIES -->
 
 <div id="uploadedStories"></div>
 
 
-<a class="btn upload-btn" href="upload.html">
+<a
+class="btn"
+href="upload.html">
+
 📤 Upload New Story
+
 </a>
+
 
 </div>
 
@@ -296,71 +302,92 @@ onclick="applyContract('The Day I Fell for You ❤️')">
 
 © 2026 RJ App 👑
 
+<br><br>
+
+Welcome to Raja King World
+
 </footer>
 
 
 <script>
 
-function getContractKey(title){
+function contractKey(id){
 
-  return "rjContract_" + title;
-
-}
-
-
-function applyContract(title){
-
-  const key = getContractKey(title);
-
-  const alreadyApplied = localStorage.getItem(key);
-
-  if(alreadyApplied){
-
-    alert("⏳ Contract application already submitted!");
-
-    return;
-
-  }
-
-  localStorage.setItem(key,"Pending");
-
-  alert(
-    "📝 Contract Application Submitted!\\n\\n" +
-    "Book: " + title + "\\n\\n" +
-    "Status: Pending ⏳"
-  );
-
-  location.reload();
+  return "rjContract_" + id;
 
 }
 
 
-function showOldContractStatus(){
+function setupContractButtons(){
 
-  if(localStorage.getItem(
-    getContractKey("The Mafia King's Lost Queen 👑")
-  )){
+  const buttons =
+    document.querySelectorAll(".contract");
 
-    const box = document.getElementById("contract-mafia");
 
-    if(box){
-      box.style.display = "inline-block";
+  buttons.forEach(function(button){
+
+    const id =
+      button.getAttribute("data-contract");
+
+
+    const status =
+      document.getElementById(
+        "status-" + id
+      );
+
+
+    if(localStorage.getItem(contractKey(id))){
+
+      button.textContent =
+        "✅ Contract Applied";
+
+      button.classList.add("applied");
+
+      button.disabled = true;
+
+      if(status){
+        status.style.display = "block";
+      }
+
     }
 
-  }
+
+    button.addEventListener("click",function(){
+
+      if(localStorage.getItem(contractKey(id))){
+
+        return;
+
+      }
 
 
-  if(localStorage.getItem(
-    getContractKey("The Day I Fell for You ❤️")
-  )){
+      localStorage.setItem(
+        contractKey(id),
+        "Pending"
+      );
 
-    const box = document.getElementById("contract-day");
 
-    if(box){
-      box.style.display = "inline-block";
-    }
+      button.textContent =
+        "✅ Contract Applied";
 
-  }
+      button.classList.add("applied");
+
+      button.disabled = true;
+
+
+      if(status){
+        status.style.display = "block";
+      }
+
+
+      alert(
+        "📝 Contract Application Submitted!\\n\\n" +
+        "Status: Pending ⏳"
+      );
+
+    });
+
+  });
 
 }
 
@@ -370,24 +397,47 @@ function loadUploadedStories(){
   const container =
     document.getElementById("uploadedStories");
 
-  const stories =
-    JSON.parse(
-      localStorage.getItem("rjUploadedStories") || "[]"
-    );
 
-  if(stories.length === 0){
+  let stories = [];
+
+
+  try{
+
+    stories =
+      JSON.parse(
+        localStorage.getItem("rjUploadedStories") || "[]"
+      );
+
+  }catch(error){
+
+    stories = [];
+
+  }
+
+
+  if(!stories.length){
+
+    const empty =
+      document.createElement("div");
+
+    empty.className = "empty";
+
+    empty.textContent =
+      "📚 Abhi koi new uploaded story nahi hai.";
+
+    container.appendChild(empty);
 
     return;
 
   }
 
 
-  stories.forEach(function(story){
+  stories.forEach(function(story,index){
 
-    const storyBox =
+    const box =
       document.createElement("div");
 
-    storyBox.className = "story";
+    box.className = "story";
 
 
     const cover =
@@ -403,7 +453,8 @@ function loadUploadedStories(){
 
       img.src = story.cover;
 
-      img.alt = story.title + " cover";
+      img.alt =
+        "Book cover";
 
       cover.appendChild(img);
 
@@ -414,16 +465,16 @@ function loadUploadedStories(){
     }
 
 
-    storyBox.appendChild(cover);
+    box.appendChild(cover);
 
 
     const title =
       document.createElement("h3");
 
     title.textContent =
-      story.title || "Untitled Story 👑";
+      story.title || "Untitled Story";
 
-    storyBox.appendChild(title);
+    box.appendChild(title);
 
 
     const author =
@@ -432,7 +483,7 @@ function loadUploadedStories(){
     author.textContent =
       "By " + (story.author || "Raja King 👑");
 
-    storyBox.appendChild(author);
+    box.appendChild(author);
 
 
     if(story.description){
@@ -440,103 +491,117 @@ function loadUploadedStories(){
       const description =
         document.createElement("div");
 
-      description.className = "description";
+      description.className =
+        "description";
 
       description.textContent =
         story.description;
 
-      storyBox.appendChild(description);
+      box.appendChild(description);
 
     }
+
+
+    const chapters =
+      Array.isArray(story.chapters)
+      ? story.chapters.length
+      : (story.chapterCount || 1);
 
 
     const stats =
       document.createElement("div");
 
-    stats.className = "stats";
+    stats.className =
+      "stats";
+
+    stats.textContent =
+      "📚 Chapters: " +
+      chapters +
+      " | 👁️ " +
+      (story.views || 0) +
+      " Views | ❤️ " +
+      (story.likes || 0) +
+      " Likes | 👥 " +
+      (story.fans || 0) +
+      " Fans";
+
+    box.appendChild(stats);
 
 
-    const chapterCount =
-      story.chapterCount ||
-      (story.chapters
-        ? story.chapters.length
-        : 1);
-
-
-    stats.innerHTML =
-      "📚 Chapters: " + chapterCount +
-      "<br>👁️ " + (story.views || 0) +
-      " Views &nbsp; ❤️ " + (story.likes || 0) +
-      " Likes &nbsp; 👥 0 Fans";
-
-
-    storyBox.appendChild(stats);
-
-
-    const readButton =
-      document.createElement("a");
-
-    readButton.className = "btn";
-
-    readButton.href = "#";
-
-    readButton.textContent =
-      "📖 Read Story";
-
-    readButton.onclick = function(){
-
-      alert(
-        "📖 Story reader will be connected when chapters are added."
-      );
-
-    };
-
-    storyBox.appendChild(readButton);
-
-
-    const contractButton =
+    const read =
       document.createElement("button");
 
-    contractButton.className =
-      "btn contract-btn";
+    read.className = "btn";
 
-    contractButton.textContent =
-      "📝 Apply for Contract";
+    read.type = "button";
 
+    read.textContent =
+      "📖 Read Story";
 
-    const contractStatus =
-      document.createElement("div");
+    read.addEventListener("click",function(){
 
-    contractStatus.className =
-      "contract-status";
-
-    contractStatus.textContent =
-      "⏳ Contract Application: Pending";
-
-    contractStatus.style.display = "none";
-
-
-    const contractKey =
-      getContractKey(
-        story.title || "Untitled Story"
+      alert(
+        "📖 Story Reader\\n\\n" +
+        "Chapters: " +
+        chapters +
+        "\\n\\nChapter reader ko next step mein connect karenge."
       );
 
+    });
 
-    if(localStorage.getItem(contractKey)){
+    box.appendChild(read);
 
-      contractStatus.style.display =
-        "inline-block";
+
+    const contract =
+      document.createElement("button");
+
+    contract.className =
+      "btn contract";
+
+    contract.type =
+      "button";
+
+    contract.textContent =
+      "📝 Apply for Contract";
+
+    box.appendChild(contract);
+
+
+    const status =
+      document.createElement("div");
+
+    status.className =
+      "status";
+
+    status.textContent =
+      "⏳ Contract Application: Pending";
+
+    box.appendChild(status);
+
+
+    const id =
+      "uploaded_" +
+      (story.id || index);
+
+
+    if(localStorage.getItem(contractKey(id))){
+
+      contract.textContent =
+        "✅ Contract Applied";
+
+      contract.classList.add("applied");
+
+      contract.disabled = true;
+
+      status.style.display =
+        "block";
 
     }
 
 
-    contractButton.onclick = function(){
+    contract.addEventListener("click",function(){
 
-      if(localStorage.getItem(contractKey)){
-
-        alert(
-          "⏳ Contract application already submitted!"
-        );
+      if(localStorage.getItem(contractKey(id))){
 
         return;
 
@@ -544,13 +609,20 @@ function loadUploadedStories(){
 
 
       localStorage.setItem(
-        contractKey,
+        contractKey(id),
         "Pending"
       );
 
 
-      contractStatus.style.display =
-        "inline-block";
+      contract.textContent =
+        "✅ Contract Applied";
+
+      contract.classList.add("applied");
+
+      contract.disabled = true;
+
+      status.style.display =
+        "block";
 
 
       alert(
@@ -560,26 +632,21 @@ function loadUploadedStories(){
         "\\n\\nStatus: Pending ⏳"
       );
 
-    };
+    });
 
 
-    storyBox.appendChild(contractButton);
-
-    storyBox.appendChild(contractStatus);
-
-
-    container.appendChild(storyBox);
+    container.appendChild(box);
 
   });
 
 }
 
 
-showOldContractStatus();
-
 loadUploadedStories();
+
+setupContractButtons();
 
 </script>
 
+
 </body>
-</html>

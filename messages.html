@@ -88,11 +88,6 @@ main{
   word-wrap:break-word;
 }
 
-.received{
-  background:#211034;
-  margin-right:auto;
-}
-
 .sent{
   background:#8B5CF6;
   margin-left:auto;
@@ -180,26 +175,29 @@ footer{
 
 <header>
   <h1>💌 RJ APP — Messages</h1>
+  <p style="margin-top:8px;color:#eee;">
+    Chat with readers and authors 👑
+  </p>
 </header>
 
 <main>
 
-<a class="back" href="index.html">🏠 Back to Home</a>
+<a class="back" href="index.html">
+  🏠 Back to Home
+</a>
 
 <div class="messages">
 
   <div class="top">
     <h2>💬 Raja King Chat</h2>
-    <p>Send and save your messages</p>
+    <p>Send your message below</p>
   </div>
 
   <div class="chat" id="chat">
-
     <div class="empty" id="empty">
       💌 No messages yet.<br>
       Write your first message below.
     </div>
-
   </div>
 
   <div class="send-area">
@@ -211,7 +209,7 @@ footer{
       maxlength="500"
     >
 
-    <button id="sendBtn">
+    <button type="button" id="sendBtn">
       📤 Send
     </button>
 
@@ -219,13 +217,13 @@ footer{
 
 </div>
 
-<button class="clear" id="clearBtn">
+<button type="button" class="clear" id="clearBtn">
   🗑️ Clear Messages
 </button>
 
 <p class="notice">
-  ⚠️ Abhi messages isi browser mein save hote hain.
-  Real users ke beech messaging ke liye baad mein database/backend connect karenge.
+  ⚠️ Messages abhi isi browser mein save hote hain.
+  Real users ke beech messaging ke liye baad mein database/backend connect hoga.
 </p>
 
 </main>
@@ -239,24 +237,28 @@ footer{
 const storageKey = "rjMessages";
 
 const chat = document.getElementById("chat");
-const empty = document.getElementById("empty");
 const input = document.getElementById("messageInput");
 const sendBtn = document.getElementById("sendBtn");
 const clearBtn = document.getElementById("clearBtn");
 
-let messages =
-  JSON.parse(localStorage.getItem(storageKey)) || [];
+let messages = [];
 
+try {
+  messages = JSON.parse(
+    localStorage.getItem(storageKey)
+  ) || [];
+} catch(error) {
+  messages = [];
+}
 
 function getTime(){
 
-  return new Date().toLocaleTimeString([],{
+  return new Date().toLocaleTimeString([], {
     hour:"2-digit",
     minute:"2-digit"
   });
 
 }
-
 
 function renderMessages(){
 
@@ -264,7 +266,8 @@ function renderMessages(){
 
   if(messages.length === 0){
 
-    const emptyBox = document.createElement("div");
+    const emptyBox =
+      document.createElement("div");
 
     emptyBox.className = "empty";
 
@@ -276,28 +279,24 @@ function renderMessages(){
     return;
   }
 
-
   messages.forEach(function(item){
 
     const box =
       document.createElement("div");
 
-    box.className =
-      "message sent";
+    box.className = "message sent";
 
     const text =
       document.createElement("span");
 
-    text.textContent =
-      item.text;
+    text.textContent = item.text;
 
     const time =
       document.createElement("span");
 
     time.className = "time";
 
-    time.textContent =
-      item.time;
+    time.textContent = item.time;
 
     box.appendChild(text);
     box.appendChild(time);
@@ -306,33 +305,27 @@ function renderMessages(){
 
   });
 
-
-  chat.scrollTop =
-    chat.scrollHeight;
+  chat.scrollTop = chat.scrollHeight;
 }
-
 
 function sendMessage(){
 
-  const text =
-    input.value.trim();
+  const text = input.value.trim();
 
   if(!text){
+    input.focus();
     return;
   }
-
 
   messages.push({
     text:text,
     time:getTime()
   });
 
-
   localStorage.setItem(
     storageKey,
     JSON.stringify(messages)
   );
-
 
   input.value = "";
 
@@ -341,12 +334,10 @@ function sendMessage(){
   input.focus();
 }
 
-
 sendBtn.addEventListener(
   "click",
   sendMessage
 );
-
 
 input.addEventListener(
   "keydown",
@@ -363,7 +354,6 @@ input.addEventListener(
   }
 );
 
-
 clearBtn.addEventListener(
   "click",
   function(){
@@ -372,28 +362,29 @@ clearBtn.addEventListener(
       return;
     }
 
-    const confirmClear =
-      confirm("Kya aap tamam messages delete karna chahte hain?");
+    if(
+      confirm(
+        "Kya aap tamam messages delete karna chahte hain?"
+      )
+    ){
 
-    if(!confirmClear){
-      return;
+      messages = [];
+
+      localStorage.removeItem(
+        storageKey
+      );
+
+      renderMessages();
+
     }
-
-    messages = [];
-
-    localStorage.removeItem(
-      storageKey
-    );
-
-    renderMessages();
 
   }
 );
-
 
 renderMessages();
 
 </script>
 
 </body>
-</html>
+
+  </html>

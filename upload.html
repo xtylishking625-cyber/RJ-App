@@ -3,10 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Upload Story • RJ App 👑</title>
+<title>RJ App - Upload Story</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
 body{
   font-family:Arial,sans-serif;
@@ -16,31 +20,41 @@ body{
 
 header{
   background:linear-gradient(135deg,#12061F,#8B5CF6);
-  padding:30px 20px;
+  padding:28px 20px;
   text-align:center;
 }
 
-header h1{font-size:32px}
+header h1{
+  font-size:32px;
+}
 
 header p{
   margin-top:8px;
   color:#eee;
 }
 
-main{
-  max-width:700px;
-  margin:auto;
-  padding:25px 15px;
+nav{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  padding:15px;
+  background:#12061F;
 }
 
-.back{
-  display:inline-block;
+nav a{
   background:#8B5CF6;
   color:white;
   text-decoration:none;
-  padding:11px 17px;
-  border-radius:10px;
-  margin-bottom:25px;
+  padding:10px 15px;
+  border-radius:20px;
+  font-weight:bold;
+}
+
+main{
+  max-width:850px;
+  margin:auto;
+  padding:25px 15px;
 }
 
 .panel{
@@ -50,6 +64,16 @@ main{
   padding:25px;
 }
 
+.panel h2{
+  margin-bottom:10px;
+}
+
+.panel > p{
+  color:#b8b5c5;
+  line-height:1.6;
+  margin-bottom:22px;
+}
+
 label{
   display:block;
   margin-top:18px;
@@ -57,44 +81,85 @@ label{
   font-weight:bold;
 }
 
-input,select,textarea{
+input,
+select,
+textarea{
   width:100%;
-  padding:12px;
-  border-radius:10px;
-  border:1px solid #34204d;
   background:#070312;
   color:white;
+  border:1px solid #34204d;
+  border-radius:10px;
+  padding:12px;
   font-size:16px;
 }
 
 textarea{
-  min-height:180px;
+  min-height:140px;
   resize:vertical;
+}
+
+select option{
+  background:#12061F;
 }
 
 .btn{
   margin-top:20px;
   background:#8B5CF6;
-  color:white;
   border:0;
-  padding:12px 20px;
+  color:white;
+  padding:12px 18px;
   border-radius:10px;
   cursor:pointer;
   font-weight:bold;
 }
 
-.note{
-  margin-top:12px;
-  color:#b8b5c5;
+.btn:hover{
+  background:#A855F7;
+}
+
+.message{
+  display:none;
+  margin-top:20px;
+  background:#211034;
+  border:1px solid #8B5CF6;
+  border-radius:12px;
+  padding:15px;
   line-height:1.5;
+}
+
+.story-card{
+  margin-top:25px;
+  background:#211034;
+  border-radius:15px;
+  padding:20px;
+  border:1px solid #34204d;
+}
+
+.story-card h3{
+  margin-bottom:8px;
+}
+
+.story-card p{
+  color:#c7c2d0;
+  line-height:1.6;
 }
 
 footer{
   text-align:center;
-  padding:30px;
+  padding:30px 15px;
   margin-top:30px;
   background:#12061F;
   color:#b8b5c5;
+}
+
+@media(max-width:600px){
+  header h1{
+    font-size:27px;
+  }
+
+  .panel{
+    padding:20px;
+  }
 }
 </style>
 </head>
@@ -102,62 +167,234 @@ footer{
 <body>
 
 <header>
-  <h1>📤 RJ APP — Upload Story</h1>
-  <p>Share your story with readers 👑</p>
+  <h1>📤 RJ APP</h1>
+  <p>Upload Your Story 👑</p>
 </header>
+
+<nav>
+  <a href="index.html">🏠 Home</a>
+  <a href="stories.html">📖 Stories</a>
+  <a href="my-stories.html">✍️ My Stories</a>
+  <a href="profile.html">👤 Profile</a>
+  <a href="bookmarks.html">🔖 Bookmarks</a>
+</nav>
 
 <main>
 
-<a class="back" href="index.html">🏠 Back to Home</a>
-
 <div class="panel">
 
-<h2>✍️ Create New Story</h2>
+  <h2>✍️ Create New Story</h2>
 
-<p class="note">
-Fill in your story information below.
-</p>
+  <p>
+    Apni story ki information fill karo aur
+    RJ App par apni story save karo.
+  </p>
 
-<form>
+  <form id="storyForm">
 
-<label>📖 Story Title</label>
-<input type="text" placeholder="Enter story title">
+    <label for="title">📖 Story Title</label>
 
-<label>🏷️ Genre</label>
-<select>
-  <option>Romance</option>
-  <option>Mafia</option>
-  <option>Action</option>
-  <option>Mystery</option>
-  <option>Fantasy</option>
-  <option>Drama</option>
-</select>
+    <input
+      type="text"
+      id="title"
+      placeholder="Enter your story title"
+      required
+    >
 
-<label>📝 Story Description</label>
-<textarea placeholder="Write your story description"></textarea>
+    <label for="genre">🏷️ Genre</label>
 
-<label>📚 Chapter 1</label>
-<textarea placeholder="Write your first chapter here"></textarea>
+    <select id="genre" required>
 
-<button class="btn" type="button">
-📤 Submit Story
-</button>
+      <option value="">Select Genre</option>
+      <option value="Romance">Romance</option>
+      <option value="Mafia">Mafia</option>
+      <option value="Action">Action</option>
+      <option value="Mystery">Mystery</option>
+      <option value="Fantasy">Fantasy</option>
+      <option value="Drama">Drama</option>
 
-<p class="note">
-Note: This is currently a front-end demo.
-Real story uploading and saving will be connected
-to the RJ App database later.
-</p>
+    </select>
 
-</form>
+    <label for="description">📝 Story Description</label>
+
+    <textarea
+      id="description"
+      placeholder="Write your story description..."
+      required
+    ></textarea>
+
+    <label for="chapter">📚 Chapter 1</label>
+
+    <textarea
+      id="chapter"
+      placeholder="Write Chapter 1..."
+      required
+    ></textarea>
+
+    <button type="submit" class="btn">
+      📤 Submit Story
+    </button>
+
+  </form>
+
+  <div id="message" class="message"></div>
+
+  <div id="preview"></div>
 
 </div>
 
 </main>
 
 <footer>
-© 2026 RJ App 👑
+  <p>© 2026 RJ App 👑</p>
+  <p>Welcome to Raja King World</p>
 </footer>
+
+
+<script>
+
+const form = document.getElementById("storyForm");
+
+const message = document.getElementById("message");
+
+const preview = document.getElementById("preview");
+
+
+function getStories(){
+
+  try{
+
+    return JSON.parse(
+      localStorage.getItem("rjUploadedStories")
+    ) || [];
+
+  }catch(error){
+
+    return [];
+
+  }
+
+}
+
+
+function saveStories(stories){
+
+  localStorage.setItem(
+    "rjUploadedStories",
+    JSON.stringify(stories)
+  );
+
+}
+
+
+form.addEventListener("submit", function(event){
+
+  event.preventDefault();
+
+  const title =
+    document.getElementById("title").value.trim();
+
+  const genre =
+    document.getElementById("genre").value;
+
+  const description =
+    document.getElementById("description").value.trim();
+
+  const chapter =
+    document.getElementById("chapter").value.trim();
+
+
+  if(
+    title === "" ||
+    genre === "" ||
+    description === "" ||
+    chapter === ""
+  ){
+
+    message.style.display = "block";
+
+    message.textContent =
+      "⚠️ Please fill in all fields.";
+
+    return;
+
+  }
+
+
+  const stories = getStories();
+
+
+  const newStory = {
+
+    id: Date.now(),
+
+    title: title,
+
+    genre: genre,
+
+    description: description,
+
+    chapter: chapter,
+
+    author: "Raja King",
+
+    views: 0,
+
+    likes: 0,
+
+    createdAt: new Date().toISOString()
+
+  };
+
+
+  stories.push(newStory);
+
+  saveStories(stories);
+
+
+  message.style.display = "block";
+
+  message.textContent =
+    "🎉 Story successfully saved! It is now in your My Stories page.";
+
+
+  preview.innerHTML = `
+    <div class="story-card">
+
+      <h3>📖 ${escapeHTML(title)}</h3>
+
+      <p>
+        🏷️ Genre: ${escapeHTML(genre)}
+      </p>
+
+      <p style="margin-top:8px;">
+        ${escapeHTML(description)}
+      </p>
+
+      <p style="margin-top:8px;">
+        ✍️ By Raja King 👑
+      </p>
+
+    </div>
+  `;
+
+
+  form.reset();
+
+});
+
+
+function escapeHTML(text){
+
+  const div = document.createElement("div");
+
+  div.textContent = text;
+
+  return div.innerHTML;
+
+}
+
+</script>
 
 </body>
 </html>
